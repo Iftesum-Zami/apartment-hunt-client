@@ -7,6 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { createContext, useState } from 'react';
+import Login from './Components/Login/Login';
 
 export const UserContext = createContext();
 
@@ -18,6 +20,9 @@ function App() {
     <div>
       <Router>
         <Switch>
+        <Route path="/login">
+            <Login></Login>
+          </Route>
           <Route path="/">
             <Home></Home>
           </Route>
