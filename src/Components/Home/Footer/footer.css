@@ -1,0 +1,8 @@
+.footerList{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footerList li:hover{
+    color: lightgray;
+}
