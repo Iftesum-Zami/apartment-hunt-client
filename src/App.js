@@ -8,8 +8,13 @@ import {
   Link
 } from "react-router-dom";
 
+export const UserContext = createContext();
+
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <div>
       <Router>
         <Switch>
@@ -19,6 +24,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+    </UserContext.Provider>
   );
 }
 
