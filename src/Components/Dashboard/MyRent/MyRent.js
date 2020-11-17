@@ -11,7 +11,7 @@ const MyRent = () => {
     console.log(rents)
 
     useEffect(() => {
-        fetch('https://rocky-tundra-21843.herokuapp.com/checkMyRent')
+        fetch('https://rocky-tundra-21843.herokuapp.com/checkMyRent?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => {
             setRents(data);

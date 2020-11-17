@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../App';
 
 const ApartmentForm = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, errors } = useForm();
     
     const onSubmit = data => {
@@ -21,7 +23,7 @@ const ApartmentForm = () => {
         <div className="p-4" style={{backgroundColor: "#F4F4F4"}}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
-                    <input type="text" ref={register({ required: true })} name="name" placeholder="Full Name" className="form-control" required/>
+                    <input type="text" defaultValue={loggedInUser.name} ref={register({ required: true })} name="title" placeholder="Full Name" className="form-control" required/>
                     {errors.name && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group">
@@ -29,7 +31,7 @@ const ApartmentForm = () => {
                     {errors.phone && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group">
-                    <input type="email" ref={register({ required: true })} name="email" placeholder="Email address" className="form-control" required/>
+                    <input type="email" defaultValue={loggedInUser.email} ref={register({ required: true })} name="email" placeholder="Email address" className="form-control" required/>
                     {errors.email && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group">
