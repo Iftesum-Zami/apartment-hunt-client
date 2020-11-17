@@ -28,8 +28,8 @@ const Sidebar = () => {
                     <Link to="/" className="text-dark nav-link"> <FontAwesomeIcon className="mr-1 text-dark" icon={faHome} /> <span>Home</span> </Link>
                 </li>
 
-                {/* {
-                    isAdmin ? <> */}
+                {
+                    isAdmin ? <>
                         <li>
                             <Link to="/booking" className="text-dark nav-link">
                                 <FontAwesomeIcon className="mr-2 text-dark" icon={faLock} />
@@ -41,14 +41,14 @@ const Sidebar = () => {
                         <li>
                             <Link to="/makeAdmin" className="text-dark nav-link"><FontAwesomeIcon className=" text-dark" icon={faUserPlus} /> <span>Make Admin</span></Link>
                         </li>
-                    {/* </> : <> */}
+                    </> : <>
                         <li>
                             <Link to="/myRent" className="text-dark nav-link">
                                 <FontAwesomeIcon className="mr-2 text-dark" icon={faHouseUser} />
                                 <span>My Rent</span> </Link>
                         </li>
-                    {/* </>
-                } */}
+                    </>
+                }
             </ul>
         </section>
     );

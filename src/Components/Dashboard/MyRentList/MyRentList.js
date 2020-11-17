@@ -19,11 +19,11 @@ const MyRentList = ({rents}) => {
                     {
                         rents.map(rent => 
                         <tr>
-                            <td>{rents.title}</td>
-                                <td>{rents.price}</td>
+                            <td>{rent.title}</td>
+                                <td>{rent.price}</td>
                             <td>
                             <select className="border-0">
-                                <option value={rents.status}>{rents.status}</option>
+                                <option value="Pending">Pending</option>
                                 <option value="On going">On going</option>
                                 <option value="Done">Done</option>
                             </select>
