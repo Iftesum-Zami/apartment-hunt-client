@@ -14,10 +14,14 @@ import AddHouse from './Components/Dashboard/AddHouse/AddHouse';
 import AddAdmin from './Components/Dashboard/AddAdmin/AddAdmin';
 import Booking from './Components/Dashboard/Booking/Booking';
 import Apartment from './Components/Apartment/Apartment/Apartment';
+import Login from './Components/Login/Login/Login';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
@@ -25,24 +29,35 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/apartment">
+
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+
+          <PrivateRoute path="/apartment">
             <Apartment></Apartment>
-          </Route>
-          <Route path="/dash">
+          </PrivateRoute>
+
+          <PrivateRoute path="/dash">
             <Dashboard />
-          </Route>
-          <Route path="/booking">
+          </PrivateRoute>
+
+          <PrivateRoute path="/booking">
             <Booking />
-          </Route>
-          <Route path="/makeAdmin">
+          </PrivateRoute>
+
+          <PrivateRoute path="/makeAdmin">
             <AddAdmin />
-          </Route>
-          <Route path="/addHouse">
+          </PrivateRoute>
+
+          <PrivateRoute path="/addHouse">
             <AddHouse />
-          </Route>
-          <Route path="/myRent">
+          </PrivateRoute>
+
+          <PrivateRoute path="/myRent">
             <MyRent />
-          </Route>
+          </PrivateRoute>
+
           <Route path="*">
             <NoMatch />
           </Route> 

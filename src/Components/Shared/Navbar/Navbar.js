@@ -34,9 +34,9 @@ const Navbar = () => {
                             <Link to="/" class="nav-link">Contact</Link>
                         </li>
                     </ul>
-                    
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
-                    
+                    <Link to="/login">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
+                    </Link>                    
                 </div>
             </nav>
         </div>

@@ -3,8 +3,18 @@ import { useForm } from "react-hook-form";
 
 const ApartmentForm = () => {
     const { register, handleSubmit, errors } = useForm();
+    
     const onSubmit = data => {
         console.log(data);
+        fetch('https://rocky-tundra-21843.herokuapp.com/rentApartment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
     return (
@@ -23,9 +33,8 @@ const ApartmentForm = () => {
                     {errors.email && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group">
-                    <input type="text" ref={register({ required: true })} name="massage" placeholder="Massage" className="form-control" required/>
-                    {/* <textarea name="massage" rows="5" placeholder="Message" className="form-control" required/> */}
-                    {errors.massage && <span className="text-danger">This field is required</span>}
+                    <input type="text" ref={register({ required: true })} name="message" placeholder="Massage" className="form-control" required/>
+                    {errors.message && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group">
                     <input type="submit" style={{backgroundColor: "#275A53", color: "#fff"}} placeholder="Request Booking"  className="form-control" />

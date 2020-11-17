@@ -8,6 +8,7 @@ const MyRent = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [rents, setRents] = useState([]);
     // ?email='+loggedInUser.email
+    console.log(rents)
 
     useEffect(() => {
         fetch('https://rocky-tundra-21843.herokuapp.com/checkMyRent')

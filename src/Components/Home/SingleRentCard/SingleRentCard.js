@@ -2,6 +2,7 @@ import React from 'react';
 import locationImg from '../../../photos/logos/location.png';
 import bed from '../../../photos/logos/bed.png';
 import bath from '../../../photos/logos/bath.png';
+import { Link } from 'react-router-dom';
 
 const SingleRentCard = ({apartment}) => {
     return (
@@ -23,7 +24,9 @@ const SingleRentCard = ({apartment}) => {
                     </div>
                     <div class="card-footer bg-white d-flex justify-content-between" style={{borderTop: 'none'}}>
                         <p style={{fontSize: '30px', fontWeight: 'bolder', color: '#275A53'}}>${apartment.price}</p>
-                        <button className="pl-3 pr-3" style={{border: 'none', backgroundColor: '#275A53', color: 'white'}}>View Details</button>
+                        <Link to="/apartment">
+                            <button className="p-3" style={{border: 'none', backgroundColor: '#275A53', color: 'white'}}>View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
