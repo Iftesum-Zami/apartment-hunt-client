@@ -17,8 +17,8 @@ const Login = () => {
                             <input style={{width: '350px'}} type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Password "/>
                             <input type="checkBox"/> <span>Remember</span> <span>Forgot Password</span>
                             <br/>
-                            <button type="submit" class="btn btn-secondary mb-2">Login</button>
-                            <h5>Dont have an account</h5>
+                            <button type="submit" class="btn btn-secondary mb-2" style={{backgroundColor: "#275A53", width: "350px"}}>Login</button>
+                            <h5>Don't have an account</h5>
                         </div>
                         <div class="col-auto">
                             {/* <button type="submit" class="btn btn-secondary mb-2">Find Now</button> */}
