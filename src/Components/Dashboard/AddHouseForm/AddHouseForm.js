@@ -17,21 +17,21 @@ const AddHouseForm = () => {
     }
 
     const handleSubmit = () => {
-        const formData = new FormData()
-        formData.append('file', file);
-        formData.append('description', info.description);
-        formData.append('title', info.title);
-
         // const formData = new FormData()
         // formData.append('file', file);
-        // formData.append('title', info.title);
         // formData.append('description', info.description);
-        // formData.append('price', info.price);
-        // formData.append('location', info.location);
-        // formData.append('bedroom', info.bedroom);
-        // formData.append('bathroom', info.bathroom);
-        // formData.append('pricedetail', info.pricedetail);
-        // formData.append('propertydetail', info.propertydetail);
+        // formData.append('title', info.title);
+
+        const formData = new FormData()
+        formData.append('file', file);
+        formData.append('title', info.title);
+        formData.append('description', info.description);
+        formData.append('price', info.price);
+        formData.append('location', info.location);
+        formData.append('bedroom', info.bedroom);
+        formData.append('bathroom', info.bathroom);
+        formData.append('pricedetail', info.pricedetail);
+        formData.append('propertydetail', info.propertydetail);
 
         fetch('https://rocky-tundra-21843.herokuapp.com/addApartment', {
             method: 'POST',
@@ -49,7 +49,7 @@ const AddHouseForm = () => {
     return (
         <div className="col-md-12 mt-2">
             <h3 className="mb-3">Add House</h3>
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}>
                 <div className="row form-inner">
                     <div className="col-md-6">
                         <div class="form-group">
@@ -67,10 +67,10 @@ const AddHouseForm = () => {
                     </div>
                 </div>
                     <button type="submit" class="btn btn-admin px-4 mt-2 mr-1 float-right">Submit</button>
-            </form>
+            </form> */}
 
 
-            {/* <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="row form-inner p-3 mr-3">
                     <div className="col-md-6">
                         <div class="form-group">
@@ -126,7 +126,7 @@ const AddHouseForm = () => {
                     </div>
                 </div>
                     <button type="submit" class="btn btn-admin px-4 mt-3 mr-3 float-right">Submit</button>
-            </form> */}
+            </form>
         </div>
     );
 };
